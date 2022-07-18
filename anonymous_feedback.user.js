@@ -4,8 +4,8 @@
 // @version      0.1
 // @description  Loads anonymous feedback of StackOverflow posts
 // @author       danthe1st
-// @updateURL   https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/anonymous_feedback-user.js
-// @downloadURL https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/anonymous_feedback-user.js
+// @updateURL   https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/anonymous_feedback.user.js
+// @downloadURL https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/anonymous_feedback.user.js
 // @match       *://*.stackexchange.com/questions/*
 // @match       *://*.stackoverflow.com/questions/*
 // @match       *://*.superuser.com/questions/*
