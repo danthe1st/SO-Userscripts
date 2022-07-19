@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Load Anonymous feedback
 // @namespace    https://github.com/danthe1st/
-// @version      1.0
+// @version      1.1
 // @description  Loads anonymous feedback of StackOverflow posts
 // @author       danthe1st
 // @updateURL   https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/anonymous_feedback.user.js
@@ -38,16 +38,22 @@
                     for(let type in data){
                         let div=document.createElement('div')
                         let text=data[type]
+                        let colorClass
                         if(!text){
                             continue
                         }else if(type=="UpMod"){
                             text=`+ ${text}`
+                            colorClass="fc-green-600"
                         }else if(type=="DownMod"){
                             text=`- ${text}`
+                            colorClass="fc-red-600"
                         }else{
                             text=`${type}=${text}`
                         }
                         div.innerText=text
+                        if(colorClass){
+                            div.classList.add(colorClass)
+                        }
                         votingContainer.appendChild(div)
                     }
                 }
