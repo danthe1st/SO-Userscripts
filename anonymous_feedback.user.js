@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Load Anonymous feedback
 // @namespace    https://github.com/danthe1st/
-// @version      1.1
+// @version      1.1.1
 // @description  Loads anonymous feedback of StackOverflow posts
 // @author       danthe1st
 // @updateURL   https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/anonymous_feedback.user.js
@@ -22,8 +22,16 @@
     'use strict';
     let votingContainers=$('.js-voting-container')
     for (let votingContainer of votingContainers){
-        let postId=votingContainer.getAttribute("data-post-id")
-        let dataExplorerURL=`https://data.stackexchange.com/${StackExchange.options.site.name.toLowerCase().replace(/\W+/gi,'').replace("stackexchange","")}/csv/1973758?postId=${postId}`
+        let postId = votingContainer.getAttribute("data-post-id")
+        let siteName = window.location.hostname
+        siteName = siteName.substring(0,siteName.lastIndexOf("."))
+        if(siteName != "meta.stackexchange"){
+            siteName = siteName.replace(".stackexchange","")
+        }
+        if(siteName.endsWith(".meta")){
+            siteName = "meta."+siteName.substring(0,siteName.length-".meta".length)
+        }
+        let dataExplorerURL=`https://data.stackexchange.com/${siteName}/csv/1973758?postId=${postId}`
         GM.xmlHttpRequest( {
             url: dataExplorerURL,
             onload: res=>{
