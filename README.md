@@ -17,14 +17,14 @@ Because of that, it doesn't show recent (anonymous/low-rep) votes.
 
 ### View other OP posts in Staging Ground
 
-This user script displays existing posts of the OP (other than the current post) when reviewing a post in the Staging Ground.
+This user script displays existing posts of the OP (other than the current post) when reviewing a post in the [Staging Ground](https://stackoverflow.com/help/staging-ground).
 These posts are shown below the comment box.
 
 [view](https://github.com/danthe1st/SO-Userscripts/blob/master/ViewOtherPostsInSG.user.js) [install](https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/ViewOtherPostsInSG.user.js)
 
 ### Custom Staging Ground Comments
 
-The Staging Ground provides a few comment templates but it does not allow writing custom comment templates.
+The [Staging Ground](https://stackoverflow.com/help/staging-ground) provides a few comment templates but it does not allow writing custom comment templates.
 This user script addresses this gap and allows writing custom comment templates for the Staging Ground.
 
 [view](https://github.com/danthe1st/SO-Userscripts/blob/master/CustomSGComments.user.js) [install](https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/CustomSGComments.user.js)
