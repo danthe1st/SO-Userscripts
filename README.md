@@ -1,7 +1,7 @@
 # My personal user-scripts for Stack Overflow
 
 This repository contains user scripts I wrote for Stack Overflow.
-These userscripts are made for [Tampermoney](https://www.tampermonkey.net/) but other userscript managers may work as well
+These userscripts are made for [Tampermoney](https://www.tampermonkey.net/) but other userscript managers may work as well.
 
 ### Load Anonymous feedback
 
