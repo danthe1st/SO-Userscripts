@@ -27,4 +27,14 @@ These posts are shown below the comment box.
 The [Staging Ground](https://stackoverflow.com/help/staging-ground) provides a few comment templates but it does not allow writing custom comment templates.
 This user script addresses this gap and allows writing custom comment templates for the Staging Ground.
 
+I am personally using the following custom comment templates:
+
+|Name|Text|
+|---|---|
+|Include Code inside question|Questions on Stack Overflow should contain everything necessary to answer them. Please [edit] your question and include the _relevant_ parts of your code using a [code block].|
+|Solved|Do you want your question to be published and [post an answer yourself](/help/self-answer) so that future readers can see it or do you want to keep it unpublished?|
+|Include info from comments|Please [edit] your question and include that in it. When it gets published, the comments will be cleaned up so all necessary information should be present in the question itself.|
+|multiple questions/too broad|It seems like you asked multiple questions in one. Please reduce your post to a single question.|
+|not specific/too general|Please [edit] your question to specifically and clearly define the problem you are trying to solve. It seems like your question is quite broad. When asking questions on Stack Overflow, please ask about _specific_ programming problems or similar. Questions that are too broad are [not considered on-topic on Stack Overflow](/help/on-topic).
+
 [view](https://github.com/danthe1st/SO-Userscripts/blob/master/CustomSGComments.user.js) [install](https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/CustomSGComments.user.js)
