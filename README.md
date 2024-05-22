@@ -36,3 +36,11 @@ I am personally using the following custom comment templates:
 |multiple questions/too broad|`It seems like you asked multiple questions in one. Please reduce your post to a single question.`|
 |not specific/too general|`Please [edit] your question to specifically and clearly define the problem you are trying to solve. It seems like your question is quite broad. When asking questions on Stack Overflow, please ask about _specific_ programming problems or similar. Questions that are too broad are [not considered on-topic on Stack Overflow](/help/on-topic)`.
 
+### Flag searcher
+
+This user script adds a button to the flagging history that allows searching all flags of the current user.
+
+When that button is pressed, it asks the user for a search string.
+After that search string is entered, it replaces the flag list with the flags containing the search string in some way.
+This only shows flags matching the current filters.
+
