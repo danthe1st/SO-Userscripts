@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Flag searcher
 // @namespace    https://github.com/danthe1st/
-// @version      1.0
+// @version      1.0.1
 // @description  Search flags on Stack Exchange sites
 // @author       danthe1st
 // @match        *://*.stackexchange.com/users/flag-summary/*
@@ -61,6 +61,4 @@
     sidebar.appendChild(btn);
 
     const resultBox = document.getElementById("mainbar");
-
-    console.log("init");
 })();
