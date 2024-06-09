@@ -34,6 +34,7 @@ I am personally using the following custom comment templates:
 |Include info from comments|`Please [edit] your question and include that in it. When it gets published, the comments will be cleaned up so all necessary information should be present in the question itself.`|
 |multiple questions/too broad|`It seems like you asked multiple questions in one. Please reduce your post to a single question.`|
 |not specific/too general|`Please [edit] your question to specifically and clearly define the problem you are trying to solve. It seems like your question is quite broad. When asking questions on Stack Overflow, please ask about _specific_ programming problems or similar. Questions that are too broad are [not considered on-topic on Stack Overflow](/help/on-topic)`.
+|'Why' question|`See [this](https://meta.stackoverflow.com/a/323382/10871900) on why questions asking for (historical) reasoning are typically considered opinion-based on Stack Overflow. Essentially these questions are unlikely to lead to satisfying answers. People probably decided to do it that way so they did.`
 
 ### Flag searcher
 [view](https://github.com/danthe1st/SO-Userscripts/blob/master/flag_searcher.user.js) [install](https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/flag_searcher.user.js)
