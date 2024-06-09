@@ -45,3 +45,7 @@ When that button is pressed, it asks the user for a search string.
 After that search string is entered, it replaces the flag list with the flags containing the search string in some way.
 This only shows flags matching the current filters.
 
+### Staging Ground comment chat profile links
+[view](https://github.com/danthe1st/SO-Userscripts/blob/master/SGCommentChatLinks.user.js) [install](https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/SGCommentChatLinks.user.js)
+
+This user script adds a link to the [chat.stackoverflow.com](https://chat.stackoverflow.com) profile of reviewers posting comments in the Staging Ground.
