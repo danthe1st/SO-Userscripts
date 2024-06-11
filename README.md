@@ -48,4 +48,9 @@ This only shows flags matching the current filters.
 ### Staging Ground comment chat profile links
 [view](https://github.com/danthe1st/SO-Userscripts/blob/master/SGCommentChatLinks.user.js) [install](https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/SGCommentChatLinks.user.js)
 
-This user script adds a link to the [chat.stackoverflow.com](https://chat.stackoverflow.com) profile of reviewers posting comments in the Staging Ground.
+This user script adds a link to the [chat.stackoverflow.com](https://chat.stackoverflow.com) profile of reviewers posting comments in the Staging Ground and copies a given text to the clipboard when clicking on it.  
+I use that with the following text:
+```none
+Hi, I saw you reviewing this [Staging Ground post]({0}). Thank you for taking the time to provide feedback to askers. In the future, would it be possible to use the Requires Major Changes option when asking for clarification from the author? See also the [Reviewer Guidelines](https://stackoverflow.com/help/staging-ground-reviewer-guidelines). I can understand that [this is confusing](https://meta.stackoverflow.com/q/430502/10871900).
+```
+
