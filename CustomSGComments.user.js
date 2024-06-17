@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Custom SG Comments
 // @namespace    https://github.com/danthe1st/
-// @version      1.0
+// @version      1.1
 // @description  Adds custom comment templates to the Staging Ground
 // @updateURL    https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/CustomSGComments.user.js
 // @downloadURL  https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/CustomSGComments.user.js
@@ -13,6 +13,11 @@
 // ==/UserScript==
 
 let commentCounter=0;
+
+const escapeHtml = (raw) => {
+    return raw.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;');
+}
+
 function addComment(name, description){
     const label=document.createElement("label")
     document.querySelector("div.template-container").appendChild(label)
@@ -20,10 +25,10 @@ function addComment(name, description){
         `
         <div class="d-flex">
             <div class="flex--item mr8">
-                <input class="s-radio" type="radio" name="comment-template-radio" id="UserDefined" role="menuitemradio" value="${description}">
+                <input class="s-radio" type="radio" name="comment-template-radio" id="UserDefined" role="menuitemradio" value="${escapeHtml(description)}">
             </div>
             <div class="flex--item">
-                <p>${name}</p>
+                <p>${escapeHtml(name)}</p>
             </div>
         </div>
         `;
@@ -87,9 +92,6 @@ function removeComment(id, elem){
 
 function main() {
     'use strict';
-    //addComment("Include code inside question","Questions on Stack Overflow should contain everything necessary to answer them. Please include the _relevant_ parts of your code in your question using a [code block].");
-    //addComment("Regex","Can you please share your attempt as well the programming language/regex engine you are using for processing the regex?");
-    //addComment("Solved","Do you want your question to be published and [post that as an answer by yourself](/help/self-answer) so that future readers can see it or do you want to keep it unpublished?")
     loadComments()
     let btn = document.createElement("a");
     btn.classList.add("pl16")
