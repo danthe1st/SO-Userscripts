@@ -54,3 +54,15 @@ I use that with the following text:
 Hi, I saw you reviewing this [Staging Ground post]({0}). Thank you for taking the time to provide feedback to askers. In the future, would it be possible to use the Requires Major Changes option when asking for clarification from the author? See also the [Reviewer Guidelines](https://stackoverflow.com/help/staging-ground-reviewer-guidelines). I can understand that [this is confusing](https://meta.stackoverflow.com/q/430502/10871900).
 ```
 
+### approved Staging Ground review statistics
+[view](https://github.com/danthe1st/SO-Userscripts/blob/master/SGReviewHistoryStats.user.js) [install](https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/SGReviewHistoryStats.user.js)
+
+This script adds an `approved question stats` button to the [Staging Ground review history](https://stackoverflow.com/staging-ground/review-history?reviewAction=ApproveAndPublish) when it is configured to only display entries where the reviewer selected `Approve & publish to public site`.
+
+After pressing this button, the user is asked how many pages of the review history should be checked. After entering that number, it automatically accesses all posts linked in these history pages (starting from the current page) and sums up/counts the scores, answers, closed questions, etc. in order to count the corresponding averages.
+
+
+> [!WARNING]
+> This scripts requests all posts listed in the amount of history pages to be checked. This would amount to approximately 50 requests per page.
+> Use this script with care and be aware that checking many pages will result in a significant amount of requests being sent.
+
