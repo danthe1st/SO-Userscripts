@@ -63,6 +63,6 @@ After pressing this button, the user is asked how many pages of the review histo
 
 
 > [!WARNING]
-> This scripts requests all posts listed in the amount of history pages to be checked. This would amount to approximately 50 requests per page.
+> This scripts requests all posts listed in the amount of history pages to be checked. This would typically amount to 51 requests per page.
 > Use this script with care and be aware that checking many pages will result in a significant amount of requests being sent.
 
