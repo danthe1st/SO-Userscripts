@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         approved Staging Ground review statistics
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  Displays statistics about published posts in the Staging Ground review history
 // @author       danthe1st
 // @match        https://stackoverflow.com/staging-ground/review-history?*reviewAction=ApproveAndPublish*
@@ -25,7 +25,7 @@
 
         const postInfoBox = doc.getElementsByClassName("js-post-summary")[0];
         if(!postInfoBox){
-            return {"error": 1,"error request failure (cannot retrieve post)":1}
+            return {"error": 1,"error request failure (no information about answers in post)":1}
         }
         const statElements = postInfoBox.getElementsByClassName("s-post-summary--stats-item");
         const result = {}
