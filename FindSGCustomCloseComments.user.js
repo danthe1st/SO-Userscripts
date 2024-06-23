@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Staging Ground custom close comment finder
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  Displays statistics about published posts in the Staging Ground review history
 // @author       danthe1st
 // @match        https://stackoverflow.com/staging-ground/review-history?*reviewAction=VoteAsOffTopic*
@@ -68,18 +68,19 @@
 
         const params = new URLSearchParams(document.location.search);
         const startPage = params.get("page") ? parseInt(params.get("page")) : 1;
-        const lastPage = startPage + parseInt(prompt("Enter requested number of history pages to check"))-1
+        const lastPage = startPage + parseInt(prompt("Enter requested number of history pages to check"))-1;
 
         const posts = new Set();
         
         addInfo(`processing entries from page ${startPage} up to ${lastPage}...`);
+        const promises = [];
         for(let i=startPage; i <= lastPage; i++){
-            addInfo(`processing history page ${i}/${lastPage}...`);
             params.set("page",i);
             const site = document.location.origin + document.location.pathname+"?"+params.toString();
-            //limit concurrency by not requsting all pages at once
-            //if this is not wanted, it's possible to collect all promises and await them together at the end
-            await processHistoryPage(site, posts);
+            promises.push(processHistoryPage(site, posts));
+        }
+        for(let promise of promises){
+            await promise;
         }
         resultBox.replaceChildren();
         addInfo(`${posts.size} posts found`);
@@ -91,4 +92,3 @@
     btn.onclick = run;
     reviewCountIndicator.parentNode.insertBefore(btn, reviewCountIndicator.nextSibling);//https://stackoverflow.com/a/4793630/10871900
 })();
-
