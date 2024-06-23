@@ -68,6 +68,8 @@ After pressing this button, the user is asked how many pages of the review histo
 
 ### Staging Ground custom close comment finder
 
+[view](https://github.com/danthe1st/SO-Userscripts/blob/master/FindSGCustomCloseComments.user.js) [install](https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/FindSGCustomCloseComments.user.js)
+
 This script adds a `find custom close comments` button to the [Staging Ground Review history](https://stackoverflow.com/staging-ground/review-history?reviewAction=VoteAsOffTopic) when the filter showing only `Vote as off-topic` questions is enabled.
 
 Upon pressing the button, the user is asked how many pages of the review history should be checked. After entering that number, it automatically accesses all posts linked in these history pages (starting from the current page) and looks for "I think that this topic is off-topic because" comments.
