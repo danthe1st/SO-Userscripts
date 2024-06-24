@@ -55,7 +55,7 @@ Hi, I saw you reviewing this [Staging Ground post]({0}). Thank you for taking th
 ```
 
 ### approved Staging Ground review statistics
-[view](https://github.com/danthe1st/SO-Userscripts/blob/master/SGReviewHistoryStats.user.js) [install](https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/SGReviewHistoryStats.user.js)
+[view](https://github.com/danthe1st/SO-Userscripts/blob/master/SGReviewHistoryStats.user.js) [install](https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/SGReviewHistoryStats.user.js) [Stackapps post](https://stackapps.com/q/10581/65705)
 
 This script adds an `approved question stats` button to the [Staging Ground review history](https://stackoverflow.com/staging-ground/review-history?reviewAction=ApproveAndPublish) when it is configured to only display entries where the reviewer selected `Approve & publish to public site`.
 
