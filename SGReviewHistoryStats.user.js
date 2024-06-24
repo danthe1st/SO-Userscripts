@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         approved Staging Ground review statistics
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  Displays statistics about published posts in the Staging Ground review history
 // @author       danthe1st
 // @match        https://stackoverflow.com/staging-ground/review-history?*reviewAction=ApproveAndPublish*
@@ -95,7 +95,7 @@
         const doc = await fetch(historyPageURL)
                 .then(res => res.text())
                 .then(txt => parser.parseFromString(txt, "text/html"));
-        const links = document.querySelectorAll("main table tbody tr td:nth-child(2) a");
+        const links = doc.querySelectorAll("main table tbody tr td:nth-child(2) a");
         for(let link of links){
             pageInfos.push(loadPageInfo(link));
         }
