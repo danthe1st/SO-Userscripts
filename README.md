@@ -45,6 +45,8 @@ When that button is pressed, it asks the user for a search string.
 After that search string is entered, it replaces the flag list with the flags containing the search string in some way.
 This only shows flags matching the current filters.
 
+## Staging Ground user scripts
+
 ### Staging Ground comment chat profile links
 [view](https://github.com/danthe1st/SO-Userscripts/blob/master/SGCommentChatLinks.user.js) [install](https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/SGCommentChatLinks.user.js)
 
@@ -78,3 +80,13 @@ It replaces the review history with only the questions containing custom close r
 > [!WARNING]
 > This scripts requests all posts listed in the amount of history pages to be checked. This would typically amount to 51 requests per page.
 > Use this script with care and be aware that checking many pages will result in a significant amount of requests being sent.
+
+### Staging Ground user review history
+
+[view](https://github.com/danthe1st/SO-Userscripts/blob/master/SGUserReviewHistory.user.js) [install](https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/SGUserReviewHistory.user.js)
+
+This script adds a `filter by user` button to the [Staging Ground Review history](https://stackoverflow.com/staging-ground/review-history?reviewAction=VoteAsOffTopic).
+
+When this button is pressed, the script asks the user how many pages of the review history should be checked. After entering that number, one also needs to enter the user ID of the user to check.
+Once both of these numbers are entered, the script requests as many pages of the review history (starting from the current page with the same filters being applied) and looks for reviews matching the specified user ID.
+It replaces the review history with only reviews from the specified user.
