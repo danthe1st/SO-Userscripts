@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         approved Staging Ground review statistics
 // @namespace    http://tampermonkey.net/
-// @version      1.2
+// @version      1.3
 // @description  Displays statistics about published posts in the Staging Ground review history
 // @author       danthe1st
 // @match        https://stackoverflow.com/staging-ground/review-history?*reviewAction=ApproveAndPublish*
@@ -63,12 +63,12 @@
         return resultElem;
     }
 
-    const processStats = async stats => {
+    const processStats = async (stats, statsPerAuthor) => {
         const sums = {};
         let count = 0
-        for(let unawaitedStat of stats){
+        for(const unawaitedStat of stats){
             const stat = await unawaitedStat;
-            for(let key in stat){
+            for(const key in stat){
                 if(!(key in sums)){
                     sums[key]=0;
                 }
@@ -81,7 +81,7 @@
         resultBox.replaceChildren();
 
         addInfo(`posts checked: ${count}`);
-        for(let key in sums){
+        for(const key in sums){
             if(key.startsWith("error")){
                 const infoElem = addInfo(`${key}: ${sums[key]}`);
                 infoElem.style="color: red";
@@ -89,15 +89,38 @@
                 addInfo(`average ${key}: ${sums[key]/count} (total: ${sums[key]})`);
             }
         }
+        const authorStatsBox = document.createElement("details");
+        const authorStatsDiv = document.createElement("textarea");
+        const authorStatsBoxSummary = document.createElement("summary");
+        authorStatsBoxSummary.innerText = "per author stats";
+        authorStatsBox.appendChild(authorStatsBoxSummary);
+        authorStatsBox.appendChild(authorStatsDiv);
+        const actualAuthorStats = {};
+        for (const [authorUrl, authorStats] of Object.entries(statsPerAuthor)) {
+            const statsOfThisAuthor = [];
+            for (const stat of authorStats) {
+                statsOfThisAuthor.push(await stat);
+            }
+            actualAuthorStats[authorUrl] = statsOfThisAuthor;
+        }
+        authorStatsDiv.innerText = JSON.stringify(actualAuthorStats);
+        resultBox.appendChild(authorStatsBox);
     }
 
-    const processHistoryPage = async (historyPageURL, pageInfos) => {
+    const processHistoryPage = async (historyPageURL, pageInfos, pageInfosPerAuthor) => {
         const doc = await fetch(historyPageURL)
                 .then(res => res.text())
                 .then(txt => parser.parseFromString(txt, "text/html"));
-        const links = doc.querySelectorAll("main table tbody tr td:nth-child(2) a");
-        for(let link of links){
-            pageInfos.push(loadPageInfo(link));
+        const trs = doc.querySelectorAll("main table tbody tr");
+        for(let tr of trs){
+            const authorLink = tr.querySelector("td:nth-child(1) a");
+            const questionLink = tr.querySelector("td:nth-child(2) a");
+            const pageInfo = loadPageInfo(questionLink);
+            pageInfos.push(pageInfo);
+            if (!(authorLink in pageInfosPerAuthor)) {
+                pageInfosPerAuthor[authorLink] = [];
+            }
+            pageInfosPerAuthor[authorLink].push(pageInfo);
         }
     }
 
@@ -109,7 +132,8 @@
         const startPage = params.get("page") ? parseInt(params.get("page")) : 1;
         const lastPage = startPage + parseInt(prompt("Enter requested number of history pages to check"))-1
 
-        const pageInfos = []
+        const pageInfos = [];
+        const pageInfosPerAuthor = {};
 
         addInfo(`processing entries from page ${startPage} up to ${lastPage}...`);
         for(let i=startPage; i <= lastPage; i++){
@@ -117,10 +141,10 @@
             params.set("page",i);
             const site = document.location.origin + document.location.pathname+"?"+params.toString();
             //pageInfos.push(loadPageInfo(site))
-            await processHistoryPage(site, pageInfos);
+            await processHistoryPage(site, pageInfos, pageInfosPerAuthor);
         }
 
-        processStats(pageInfos)
+        processStats(pageInfos, pageInfosPerAuthor)
     }
 
     const reviewCountIndicator = document.getElementsByClassName("js-sg-review-count")[0]
@@ -128,5 +152,4 @@
     btn.innerText = "approved question stats";
     btn.onclick = showStats;
     reviewCountIndicator.parentNode.insertBefore(btn, reviewCountIndicator.nextSibling);//https://stackoverflow.com/a/4793630/10871900
-    //
 })();

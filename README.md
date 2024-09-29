@@ -63,9 +63,11 @@ This script adds an `approved question stats` button to the [Staging Ground revi
 
 After pressing this button, the user is asked how many pages of the review history should be checked. After entering that number, it automatically accesses all posts linked in these history pages (starting from the current page) and sums up/counts the scores, answers, closed questions, etc. in order to count the corresponding averages.
 
+The output of this script is used to compute [These stats](https://github.com/danthe1st/StagingGroundStats/).
 
 > [!WARNING]
 > This scripts requests all posts listed in the amount of history pages to be checked. This would typically amount to 51 requests per page.
+> Running this user script may run into [these rate-limits](https://meta.stackexchange.com/q/403002/525172).
 > Use this script with care and be aware that checking many pages will result in a significant amount of requests being sent.
 
 ### Staging Ground custom close comment finder
