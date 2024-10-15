@@ -14,12 +14,6 @@ This user script displays the number of anonymous up- and downvotes below the vo
 The data is gathered using [Stack Exchange Data Explorer](https://data.stackexchange.com/) which is only updated once per week.
 Because of that, it doesn't show recent (anonymous/low-rep) votes.
 
-### View other OP posts in Staging Ground
-[view](https://github.com/danthe1st/SO-Userscripts/blob/master/ViewOtherPostsInSG.user.js) [install](https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/ViewOtherPostsInSG.user.js) [Stackapps post](https://stackapps.com/q/10571/65705)
-
-This user script displays existing posts of the OP (other than the current post) when reviewing a post in the [Staging Ground](https://stackoverflow.com/help/staging-ground).
-These posts are shown below the comment box.
-
 ### Flag searcher
 [view](https://github.com/danthe1st/SO-Userscripts/blob/master/flag_searcher.user.js) [install](https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/flag_searcher.user.js) [Stackapps post](https://stackapps.com/q/10563/65705)
 
@@ -30,6 +24,12 @@ After that search string is entered, it replaces the flag list with the flags co
 This only shows flags matching the current filters.
 
 ## Staging Ground user scripts
+
+### View other OP posts in Staging Ground
+[view](https://github.com/danthe1st/SO-Userscripts/blob/master/ViewOtherPostsInSG.user.js) [install](https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/ViewOtherPostsInSG.user.js) [Stackapps post](https://stackapps.com/q/10571/65705)
+
+This user script displays existing posts of the OP (other than the current post) when reviewing a post in the [Staging Ground](https://stackoverflow.com/help/staging-ground).
+These posts are shown below the comment box.
 
 ### Custom Staging Ground Comments
 [view](https://github.com/danthe1st/SO-Userscripts/blob/master/CustomSGComments.user.js) [install](https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/CustomSGComments.user.js) [Stackapps post](https://stackapps.com/q/10570/65705)
