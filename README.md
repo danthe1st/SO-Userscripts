@@ -20,6 +20,17 @@ Because of that, it doesn't show recent (anonymous/low-rep) votes.
 This user script displays existing posts of the OP (other than the current post) when reviewing a post in the [Staging Ground](https://stackoverflow.com/help/staging-ground).
 These posts are shown below the comment box.
 
+### Flag searcher
+[view](https://github.com/danthe1st/SO-Userscripts/blob/master/flag_searcher.user.js) [install](https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/flag_searcher.user.js) [Stackapps post](https://stackapps.com/q/10563/65705)
+
+This user script adds a button to the flagging history that allows searching all flags of the current user.
+
+When that button is pressed, it asks the user for a search string.
+After that search string is entered, it replaces the flag list with the flags containing the search string in some way.
+This only shows flags matching the current filters.
+
+## Staging Ground user scripts
+
 ### Custom Staging Ground Comments
 [view](https://github.com/danthe1st/SO-Userscripts/blob/master/CustomSGComments.user.js) [install](https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/CustomSGComments.user.js) [Stackapps post](https://stackapps.com/q/10570/65705)
 
@@ -36,16 +47,6 @@ I am personally using the following custom comment templates:
 |not specific/too general|`Please [edit] your question to specifically and clearly define the problem you are trying to solve. It seems like your question is quite broad. When asking questions on Stack Overflow, please ask about _specific_ programming problems or similar. Questions that are too broad are [not considered on-topic on Stack Overflow](/help/on-topic)`.|
 |'Why' question|`See [this](https://meta.stackoverflow.com/a/323382/10871900) on why questions asking for (historical) reasoning are typically considered opinion-based on Stack Overflow. Essentially these questions are unlikely to lead to satisfying answers. People probably decided to do it that way so they did.`|
 
-### Flag searcher
-[view](https://github.com/danthe1st/SO-Userscripts/blob/master/flag_searcher.user.js) [install](https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/flag_searcher.user.js) [Stackapps post](https://stackapps.com/q/10563/65705)
-
-This user script adds a button to the flagging history that allows searching all flags of the current user.
-
-When that button is pressed, it asks the user for a search string.
-After that search string is entered, it replaces the flag list with the flags containing the search string in some way.
-This only shows flags matching the current filters.
-
-## Staging Ground user scripts
 
 ### Staging Ground comment chat profile links
 [view](https://github.com/danthe1st/SO-Userscripts/blob/master/SGCommentChatLinks.user.js) [install](https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/SGCommentChatLinks.user.js)
