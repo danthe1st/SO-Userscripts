@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Staging Ground custom close comment finder
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  Displays statistics about published posts in the Staging Ground review history
 // @author       danthe1st
 // @match        https://stackoverflow.com/staging-ground/review-history?*reviewAction=VoteAsOffTopic*
@@ -29,9 +29,28 @@
     }
     
     const processPost = async (pageUrl, row, posts) => {
+        const postId = pageUrl.substring(pageUrl.lastIndexOf("/")+1);
+        if(!parseInt(postId)) {
+            console.warn("Post ID cannot be resolved!");
+            return;
+        }
         const doc = await fetch(pageUrl)
                 .then(res => res.text())
                 .then(txt => parser.parseFromString(txt, "text/html"));
+        
+        //unlock post
+        const fKeyData=new FormData;
+        const data = new URLSearchParams();
+        data.append("fKey", StackExchange.options.user.fkey);
+        const cancelResponse = await fetch(`/staging-ground/${postId}/cancel-lock`, {
+            method: "POST",
+            body: data
+        });
+        if(!cancelResponse.ok){
+            alert(`Cannot unlock post: ${link.href}`);
+            window.location.href=window.location.href;//refresh page
+        }
+        
         const commentElements = doc.getElementsByClassName("comment-body");
         let store = false;
         for(let elem of commentElements){
