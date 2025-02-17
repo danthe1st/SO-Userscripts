@@ -93,3 +93,9 @@ This script adds a `filter by user` button to the [Staging Ground Review history
 When this button is pressed, the script asks the user how many pages of the review history should be checked. After entering that number, one also needs to enter the user ID of the user to check.
 Once both of these numbers are entered, the script requests as many pages of the review history (starting from the current page with the same filters being applied) and looks for reviews matching the specified user ID.
 It replaces the review history with only reviews from the specified user.
+
+### Staging Ground Questions in Network profile
+
+[view](https://github.com/danthe1st/SO-Userscripts/blob/master/NetworkProfileStagingGroundIndicator.user.js) [install](https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/NetworkProfileStagingGroundIndicator.user.js)
+
+When viewing a Stack Exchange Network profile (i.e. a profile under `https://stackexchange.com/users`, not a site profile) and the viewed user has nondeleted questions in the Staging Ground, a link to the Staging Ground questions is shown below the username.
