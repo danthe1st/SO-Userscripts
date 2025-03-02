@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Staging Ground Questions in Network profile
 // @namespace    https://github.com/danthe1st/
-// @version      1.0.0
+// @version      1.0.1
 // @description  Adds an indicator for Staging Ground questions to the network profile
 // @author       danthe1st
 // @updateURL    https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/NetworkProfileStagingGroundIndicator.user.js
@@ -9,6 +9,7 @@
 // @match        https://stackexchange.com/users/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=stackexchange.com
 // @grant        GM.xmlHttpRequest
+// @connect      stackoverflow.com
 // ==/UserScript==
 
 const parser = new DOMParser();
@@ -40,7 +41,6 @@ const processSEAccount = seAccountDoc => {
 
 (function() {
     'use strict';
-
     const currentPageMatch = document.location.href.match(/(https:\/\/stackexchange.com\/users\/\d+)\/.*/);
     if(currentPageMatch){
         const seBaseUserUrl = currentPageMatch[1];
