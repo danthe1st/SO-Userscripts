@@ -4,7 +4,11 @@ This repository contains user scripts I wrote for Stack Overflow.
 These userscripts are made for [Tampermoney](https://www.tampermonkey.net/) but other userscript managers may work as well.
 
 ### Load Anonymous feedback
-[view](https://github.com/danthe1st/SO-Userscripts/blob/master/anonymous_feedback.user.js) [install](https://raw.githubusercontent.com/danthe1st/SO-Userscripts/master/anonymous_feedback.user.js) [Stackapps post](https://stackapps.com/q/9680/65705)
+[view](https://github.com/danthe1st/SO-Userscripts/blob/master/anonymous_feedback.user.js) [Stackapps post (deleted)](https://stackapps.com/q/9680/65705)
+
+> [!WARNING]
+> This script makes one request to SEDE for every post on the page every time you view a question page. This can result in a lot of requests, especially when you are viewing many posts with many answers.
+> **This script got me blacklisted from SEDE and does no longer work due to the query being deleted.**
 
 When people vote on questions but are either not logged in or do not have the required reputation threshold,
 they can still use the vote buttons but this will not affect the score of the post.
